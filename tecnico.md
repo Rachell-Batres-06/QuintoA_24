@@ -10,7 +10,7 @@ El sistema Starlight Cinemas consta de tres componentes principales:
 3. **Gestor de Datos**: Desarrollado utilizando MYSQL, JSON.
 
 ## Requisitos Técnicos
-1. **Backend**: NodeJS
+1. **Backend**: Python, Flask
 2. **Frontend**: JavaScript, HTML, CSS
 3. **Gestión de Datos**: MYSQL
 
