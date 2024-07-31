@@ -11,51 +11,45 @@ Starlight Cinema consiste en una aplicación web dinámica ofreciendo un amplio 
 Starlight Cinemas es un sistema de reservacion de boletos desde la comododidad del usuario que facilita la compra y reserva de este.
 
 ## Tipos de Usuario
-1. **Usuario**: Podra visualizar productos de la tienda pero no podra comprar.
-2. **Uusario Cliente**: Prealizara compras en el sistema.
-3. **Usuario Administrador**: Gestiona a los usuarios y los productos vendidos en la tienda.
+1. **Usuario**: Podra visualizar laspelicas pero no podra comprar.
+2. **Uusario Cliente**:podra realizar lodelusuario con la difrencia que podra hacer la compra de los boletos.
+3. **Usuario Administrador**: Podra visualizar los usuarios ingresados, Podra eliminar y agregar administradores secundarios como pelicualas.
 
 ## Registro e Inicio de Sesión
 
 ### Inicio de Sesión
-- **Correo y contraseña**
+- **Correo**
 - **Contraseña**
   
 ### Registro de Usuario
 - **Nombre**
-- **Apellido**
-- **Nombre de Usuario**
 - **Correo Electrónico**
 - **Contraseña**
 - **Confirmar Contraseña**
   
 ### Registro de Compras
-- **a**
-- **b**
-- **c**
-- **d**
+- **Nombre**
+- **Correo electronico**
+- **Pelicula**
+- **Horario**
+- **Sala**
+- **NIT**
+- **Numero de trajeta**
+- **Fecha de Expiracion**
+- **CVV**
   
 ## Requisitos Técnicos
-1. AviCar debe tener backend, frontend y gestor de datos con archivos JSON.
-2. Utilizar Cognito de AWS para el registro de nuevos usuarios.
-3. Almacenar fotos de perfil en S3 de AWS.
-4. No usar bases de datos, solo archivos JSON.
-5. Ejecutar el programa en una EC2 de AWS.
-6. Crear usuarios IAM necesarios para el manejo de servicios de AWS.
-7. Uso de un repositorio Git para el control de versiones.
+1. Starlight Cinemas debe tener backend, frontend y gestor de datos con MYSQL.
+2. Acceso a un sitio web.
+3. Internet para la facturacion.
 
 ## Uso de la Aplicación
 ### Acceso y Registro
 1. **Inicio de sesión**: Ingrese su correo electrónico y contraseña.
 2. **Registro de nuevo usuario**: Complete el formulario de registro con los datos solicitados.
 
-### Gestión de Vuelos y Autos
-1. **Reservar vuelo**: Filtre y seleccione el vuelo deseado, luego confirme su reserva.
-2. **Alquilar auto**: Filtre y seleccione el automóvil deseado, luego confirme su alquiler.
-
 ### Gestión de Usuarios
-1. **Administrador**: Puede agregar o eliminar usuarios turistas y recepcionistas.
-2. **Recepcionista**: Puede aprobar o rechazar solicitudes de vuelos y autos.
+1. **Administrador**: Puede agregar o eliminar usuarios y administradores secundarios.
 
 ## Capturas de Pantalla y Descripción
 Proporcione capturas de pantalla de las principales funcionalidades y descripciones detalladas para guiar a los usuarios en el uso de la aplicación.
