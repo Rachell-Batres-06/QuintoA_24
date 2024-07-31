@@ -7,7 +7,7 @@ Starlight Cinema consiste en una aplicación web dinámica ofreciendo un amplio 
 El sistema Starlight Cinemas consta de tres componentes principales:
 1. **Backend**: Desarrollado en Python.
 2. **Frontend**: Desarrollado utilizando JavaScript, HTML, CSS.
-3. **Gestor de Datos**: Desarrollado utilizando MYSQL.
+3. **Gestor de Datos**: Desarrollado utilizando MYSQL, JSON.
 
 ## Requisitos Técnicos
 1. **Backend**: NodeJS
@@ -97,10 +97,8 @@ CREATE TABLE Reservas (
 
 ## Implementación del Backend
 ### Configuración del Entorno
-1. Instalar NodeJS y npm.
-2. Configurar un nuevo proyecto con npm init.
-3. Instalar dependencias necesarias
-**npm install express body-parser aws-sdk jsonfile**
+1. Instalar Flask Json.
+3. Realizar la conexion con la base de datos creada en MYSQL.
 
 ### Ejemplo de Código para el Servidor
 ![Mi Imagen](img/code.png)
