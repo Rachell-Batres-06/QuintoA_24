@@ -105,25 +105,12 @@ CREATE TABLE Reservas (
 
 ## Implementación del Frontend
 ### Configuración del Entorno
-1. Crear carpetas HTML, JavaScrip, CSS.
-2. Crear un proyecto utilizando Visual Code 
+1. Crear un proyecto utilizando Visual Code. 
+2. Crear carpetas HTML, JavaScrip, CSS.
 3. Crear o modificarlas interfazes que semostraran al usuario colocarle las condiciones y animación.
    
 ### Ejemplo de la conexion con MYSQL 
-1. Crear la Api.
-2. Crear la conexion de la api con MYSQL.
-3. Crear componentes y servicios necesarios
-**ng generate component login**
-**ng generate service auth**
-
-## Despliegue en AWS EC2
-### Configuración de la Instancia
-1. Crear una nueva instancia EC2 con Amazon Linux.
-2. Instalar NodeJS y configurar el entorno.
-3. Clonar el repositorio del proyecto desde Git.
-4. Instalar dependencias y ejecutar el servidor
-
-    **git clone https://github.com/usuario/avicar.git**
-**cd avicar**
-**npm install**A
-**npm start**
+1. Crear la base de datos en MYSQL con las tablas necesarias. 
+2. Crear la Api.
+3. Crear la conexion de la api con MYSQL.
+4. Crear componentes y servicios necesarios
