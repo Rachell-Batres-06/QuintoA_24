@@ -1,4 +1,4 @@
-# Manual Técnico - AVICAR
+# Manual Técnico - Starlight Cinemas
 
 ## Introducción
 Starlight Cinema consiste en una aplicación web dinámica ofreciendo un amplio catálogo de películas del momento y funciones para satisfacer al cliente.
