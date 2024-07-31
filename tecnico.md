@@ -1,41 +1,20 @@
 # Manual Técnico - AVICAR
 
 ## Introducción
-AviCar es una aplicación diseñada para gestionar viajes y alquiler de automóviles para turistas. Este manual técnico proporciona información detallada sobre la arquitectura, tecnologías y configuraciones necesarias para implementar y mantener el sistema AviCar.
+Starlight Cinema consiste en una aplicación web dinámica ofreciendo un amplio catálogo de películas del momento y funciones para satisfacer al cliente.
 
 ## Arquitectura del Sistema
-El sistema AviCar consta de tres componentes principales:
-1. **Backend**: Desarrollado en NodeJS.
-2. **Frontend**: Desarrollado utilizando un framework JavaScript (Angular, React, Vue).
-3. **Gestor de Datos**: Utiliza archivos JSON.
+El sistema Starlight Cinemas consta de tres componentes principales:
+1. **Backend**: Desarrollado en Python.
+2. **Frontend**: Desarrollado utilizando JavaScript, HTML, CSS.
+3. **Gestor de Datos**: Desarrollado utilizando MYSQL.
 
 ## Requisitos Técnicos
 1. **Backend**: NodeJS
-2. **Frontend**: Angular, React o Vue
-3. **Gestión de Datos**: Archivos JSON
-4. **Servicios en la Nube**: AWS (Cognito, S3, EC2)
-5. **Control de Versiones**: Git
+2. **Frontend**: JavaScript, HTML, CSS
+3. **Gestión de Datos**: MYSQL
 
-## Servicios en la Nube
-### MONGO DB
-- Utilizado para el registro y autenticación de usuarios.
-- Almacenamiento de la informacion.
-
-### AWS S3
-- Almacena fotos de perfil de los usuarios.
-- Configurar buckets para almacenamiento seguro.
-
-### AWS EC2
-- Hospeda la aplicación backend y frontend.
-- Configurar instancias para el despliegue de la aplicación.
-
-## Configuración de Usuarios IAM
-Crear usuarios IAM con permisos específicos para manejar servicios de AWS:
-1. **Usuario para Cognito**: Permisos para gestionar el User Pool.
-2. **Usuario para S3**: Permisos para gestionar los buckets de almacenamiento.
-3. **Usuario para EC2**: Permisos para gestionar instancias y configuraciones.
-
-## Estructura de Datos a Almacenar en JSON
+## Estructura de Datos a Almacenar en MYSQL
 ### Ejemplo de Estructura de Usuarios
 ```json
 {
@@ -53,37 +32,67 @@ Crear usuarios IAM con permisos específicos para manejar servicios de AWS:
     ]
 }
 ```
-### Ejemplo de Estructura de Vuelos
-```json
-{
-    "vuelos": [
-        {
-            "id": 1,
-            "nombreAgencia": "Agencia 1",
-            "ciudadOrigen": "Ciudad A",
-            "ciudadDestino": "Ciudad B",
-            "diasVuelo": ["Lunes", "Viernes"],
-            "precioVuelo": 200
-        }
-    ]
-}
+### Ejemplo de Estructura de Registro
+```MYSQL
+CREATE TABLE Registro (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Usuario VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Contraseña VARCHAR(255) NOT NULL,	
+    Validacion VARCHAR(255) NOT NULL,
+    Verificado BOOLEAN NOT NULL DEFAULT FALSE,
+    Correo_Enviado BOOLEAN NOT NULL DEFAULT FALSE,
+    Tipo VARCHAR(50) NOT NULL
+);
 ```
 
-### Ejemplo de Estructura de Autos
-```json
-{
-    "autos": [
-        {
-            "id": 1,
-            "nombreAgencia": "Agencia 2",
-            "marca": "Toyota",
-            "placa": "XYZ-123",
-            "modelo": "Corolla",
-            "precio": 50,
-            "ciudadVehiculo": "Ciudad C"
-        }
-    ]
-}
+### Ejemplo de Estructura de Pelicula
+```MYSQL
+CREATE TABLE Pelicula (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Titulo VARCHAR(255) NOT NULL,
+    Descripcion TEXT NOT NULL,
+    Genero VARCHAR(20) NOT NULL,
+    Duracion VARCHAR(10) NOT NULL,
+    Funcion1 VARCHAR(10) NOT NULL,
+    Funcion2 VARCHAR(10) NOT NULL,
+    Funcion3 VARCHAR(10) NOT NULL,
+    Funcion4 VARCHAR(10) NOT NULL,
+    Sala VARCHAR(10) NOT NULL,
+    Carrusel_img_path VARCHAR(255) NOT NULL,
+    Poster_img_path VARCHAR(255) NOT NULL,
+    Fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+### Ejemplo de Estructura de Pagos
+```MYSQL
+CREATE TABLE Pagos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Pelicula VARCHAR(255) NOT NULL,
+    Horario VARCHAR(50) NOT NULL,
+    Sala VARCHAR(10) NOT NULL,
+    NIT VARCHAR(20) NOT NULL,
+    NO_Tarjeta VARCHAR(255) NOT NULL,
+    Fecha_Expiracion VARCHAR(10) NOT NULL,
+    CVV VARCHAR(255) NOT NULL,
+    AsientosSeleccionados JSON NOT NULL,
+    Total DECIMAL(10, 2) NOT NULL,
+    FechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+### Ejemplo de Estructura de Reserva
+```MYSQL
+CREATE TABLE Reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pelicula_id INT NOT NULL,
+    horario VARCHAR(50) NOT NULL,
+    asiento VARCHAR(10) NOT NULL,
+    pago_id INT NOT NULL,
+    FOREIGN KEY (pelicula_id) REFERENCES Pelicula(id),
+    FOREIGN KEY (pago_id) REFERENCES Pagos(id)
+);
 ```
 
 ## Implementación del Backend
