@@ -105,14 +105,13 @@ CREATE TABLE Reservas (
 
 ## Implementación del Frontend
 ### Configuración del Entorno
-1. Instalar Angular, React o Vue CLI.
-2. Crear un nuevo proyecto utilizando el CLI correspondiente.
-3. Configurar servicios y componentes según las necesidades de la aplicación.
-### Ejemplo de Configuración en Angular
-1. Instalar Angular CLI:
-**npm install -g @angular/cli**
-2. Crear un nuevo proyecto:
-**ng new avicar**
+1. Crear carpetas HTML, JavaScrip, CSS.
+2. Crear un proyecto utilizando Visual Code 
+3. Crear o modificarlas interfazes que semostraran al usuario colocarle las condiciones y animación.
+   
+### Ejemplo de la conexion con MYSQL 
+1. Crear la Api.
+2. Crear la conexion de la api con MYSQL.
 3. Crear componentes y servicios necesarios
 **ng generate component login**
 **ng generate service auth**
@@ -126,5 +125,5 @@ CREATE TABLE Reservas (
 
     **git clone https://github.com/usuario/avicar.git**
 **cd avicar**
-**npm install**
+**npm install**A
 **npm start**
