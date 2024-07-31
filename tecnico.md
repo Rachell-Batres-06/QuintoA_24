@@ -1,10 +1,10 @@
-# Manual Técnico - Starlight Cinemas
+# Manual Técnico - Starlight Cinema
 
 ## Introducción
 Starlight Cinema consiste en una aplicación web dinámica ofreciendo un amplio catálogo de películas del momento y funciones para satisfacer al cliente.
 
 ## Arquitectura del Sistema
-El sistema Starlight Cinemas consta de tres componentes principales:
+El sistema Starlight Cinema consta de tres componentes principales:
 1. **Backend**: Desarrollado en Python.
 2. **Frontend**: Desarrollado utilizando JavaScript, HTML, CSS.
 3. **Gestor de Datos**: Desarrollado utilizando MYSQL, JSON.
